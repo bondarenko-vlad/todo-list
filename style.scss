@@ -1,0 +1,125 @@
+$mainColor: #889dea;
+$fonts: "Poppins", sans-serif;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $fonts;
+}
+body{
+    background: #ddd
+}
+.container {
+  max-width: 770px;
+  margin: 0 auto;
+}
+.background-wrapper-title {
+  background: white;
+}
+.title {
+  background: $mainColor;
+  border-bottom-right-radius: 20px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .title-items {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 100;
+    .title-item {
+      text-align: center;
+      .info {
+        font-size: 12px;
+      }
+      .number {
+        font-size: 56px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+.background-wrapper-main {
+  background: $mainColor;
+}
+.main {
+  border-top-left-radius: 20px;
+  background: white;
+  padding: 5%;
+  ul{
+      padding: 0;
+      list-style-type: none;
+      min-height: 150px;
+      li{
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+        input[type='checkbox']{
+            color: #fff;
+            background:$fonts;
+            width:20px;
+            height: 20px;
+        }
+        p{
+            padding-left: 20px;
+        }
+        span{
+            color: $mainColor;
+            margin: 0 5px;
+            &:hover{
+              font-size: 20px;
+            }
+        }
+
+        .li-info{
+          display: flex;
+          justify-content: space-between;
+        }
+        .option{
+          font-size: 23px;
+          cursor: pointer;
+        }
+        textarea{
+          border: none;
+          outline:none;
+          width: 100%;
+          resize: none;
+        }
+        .checked{
+          text-decoration: line-through;
+        }
+
+      }
+      .showState{
+        color: #bbb;
+        font-size: 20px;
+        text-align: center;
+      }
+     
+  }
+  .new-task{
+      background: #88eaa9;
+      color: white;
+      border: none;
+      outline:none;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+      padding:10px 14px;
+      transition: transform .3s;
+      &:hover{
+          transform: scale(1.1);
+      }
+      &:disabled{
+        background: #ccc
+      }
+  }
+}
