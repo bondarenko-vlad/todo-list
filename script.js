@@ -87,7 +87,7 @@ newTask.onclick = () => {
 };
 
 document.querySelector("ul").onclick = () => {
-  if (event.target.innerHTML == "✔" && newTask.disabled == true) {
+  if (event.target.innerHTML == "✔" && newTask.disabled == true) { // завершить редактирование
     let p = document.createElement("p");
     p.innerHTML = document.querySelector("textarea").value;
     event.target.parentElement.parentElement.parentElement.appendChild(p);
@@ -96,7 +96,7 @@ document.querySelector("ul").onclick = () => {
     newTask.disabled = false;
     activeEl.innerHTML = Number(scopeEl.innerHTML) - Number(successfulEl.innerHTML)
 
-  } else if (event.target.innerHTML == "✎" && newTask.disabled == false) {
+  } else if (event.target.innerHTML == "✎" && newTask.disabled == false) { // редактировать
     let textarea = document.createElement("textarea");
     let p = event.target.parentElement.parentElement.parentElement.children[1];
     textarea.value = p.innerHTML;
@@ -104,15 +104,14 @@ document.querySelector("ul").onclick = () => {
     p.remove();
     event.target.innerHTML = "&#10004;";
     newTask.disabled = true;
-  } else if (event.target.type == "checkbox") {
+  } else if (event.target.type == "checkbox") { // выполнить таску
     let p = event.target.parentElement.parentElement.parentElement.children[1];
-
     event.target.checked
       ? p.classList.add("checked")
       : p.classList.remove("checked");
       document.querySelector('.successful').innerHTML = document.querySelectorAll('.checked').length
       activeEl.innerHTML = Number(scopeEl.innerHTML) - Number(successfulEl.innerHTML)
-    } else if (event.target.className == "trash") {
+    } else if (event.target.className == "trash") { //удалить таску
     event.target.parentElement.parentElement.parentElement.remove();
     newTask.disabled = false;
     document.querySelector('.scope').innerHTML = document.querySelectorAll('li').length
@@ -123,11 +122,11 @@ document.querySelector("ul").onclick = () => {
   }
 };
 
-
+// вставка в пустой UL
 function showStateFunc(){
     let showState = document.createElement('p')
     if(document.querySelector('ul').children.length == 0) {
-        showState.innerHTML = 'You have any tasks'
+        showState.innerHTML = 'You have not any tasks'
         showState.classList.add('showState')
         document.querySelector('ul').appendChild(showState)
     } else {
